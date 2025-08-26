@@ -13,4 +13,5 @@ phases:
       - # You can add build commands here if needed
 artifacts:
   files:
-    - '**/*' # This means package all files in the directory
+  - /var/www/html/index.html
+    #'**/*' # This means package all files in the directory
