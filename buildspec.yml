@@ -1,19 +1,25 @@
 version: 0.2
 
 phases:
-install:
-  commands:
-  - echo Installing NGINX
-  - sudo apt-get update
-  - sudo apt-get install nginx -y
-  build: 
-  commands:
-  - echo Build started on 'date'
-  - cp index.html /var/www/html/
+  # The 'install' phase is for setting up dependencies.
+  install:
+    commands:
+      - echo "Installing NGINX"
+      - sudo apt-get update -y
+      - sudo apt-get install nginx -y
+  
+  # The 'build' phase is where the core build logic happens.
+  build:
+    commands:
+      - echo "Build started on 'date'"
+      - cp index.html /var/www/html/
+  
+  # The 'post_build' phase is for final clean-up or configuration.
   post_build:
-  commands:
-  - echo Configuring NGINX
+    commands:
+      - echo "Configuring NGINX"
 
-  artifacts:
+# The 'artifacts' section defines which files to include in the output.
+artifacts:
   files:
-  - '**/*'
+    - '**/*'
