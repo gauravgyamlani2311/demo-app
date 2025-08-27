@@ -16,4 +16,4 @@ install:
 
   artifacts:
   files:
-  - '*/**'
+  - '**/*'
