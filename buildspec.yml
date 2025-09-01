@@ -1,0 +1,18 @@
+version: 0.2
+
+phases:
+  install:
+    commands:
+      - echo Install phase started
+      # No dependencies needed for static HTML/CSS/JS
+  build:
+    commands:
+      - echo Build phase started
+      # No build step needed unless pre-processing assets (minification, etc.)
+  post_build:
+    commands:
+      - echo Post-build phase started
+
+artifacts:
+  files:
+    - '**/*'
