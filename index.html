@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sockista - Socks Store</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="logo">Sockista</div>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="#">Home</a></li>
+        <li><a href="#products">Socks</a></li>
+        <li><a href="#cart">Cart</a></li>
+        <li><a href="#reviews">Reviews</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <h1>Find Your Perfect Socks!</h1>
+    <p>Bestsellers • Quirky • Athletic • Kids</p>
+    <a href="#products" class="btn">Shop Now</a>
+  </section>
+
+  <!-- Filter Section -->
+  <section id="filters" class="filters">
+    <h2>Filter Socks</h2>
+    <select id="filter-category">
+      <option value="all">All Categories</option>
+      <option value="athletic">Athletic</option>
+      <option value="funky">Funky</option>
+      <option value="kids">Kids</option>
+    </select>
+    <input type="number" id="min-price" placeholder="Min Price" />
+    <input type="number" id="max-price" placeholder="Max Price" />
+    <button onclick="filterProducts()" class="btn">Apply Filter</button>
+  </section>
+
+  <!-- Product Grid -->
+  <section id="products" class="product-grid">
+    <div class="product-card athletic">
+      <img src="images/sock1.jpg" alt="Red Striped Sock" />
+      <h3>Red Striped Sock</h3>
+      <p>₹99</p>
+      <button class="add-to-cart" onclick="addToCart('Red Striped Sock', 99)">Add to Cart</button>
+      <button class="add-to-wishlist" onclick="addToWishlist('Red Striped Sock')">♡ Wishlist</button>
+    </div>
+    <div class="product-card funky">
+      <img src="images/sock2.jpg" alt="Blue Polka Sock" />
+      <h3>Blue Polka Sock</h3>
+      <p>₹109</p>
+      <button class="add-to-cart" onclick="addToCart('Blue Polka Sock', 109)">Add to Cart</button>
+      <button class="add-to-wishlist" onclick="addToWishlist('Blue Polka Sock')">♡ Wishlist</button>
+    </div>
+    <div class="product-card kids">
+      <img src="images/sock3.jpg" alt="Kids' Cartoon Sock" />
+      <h3>Kids' Cartoon Sock</h3>
+      <p>₹89</p>
+      <button class="add-to-cart" onclick="addToCart('Kids\' Cartoon Sock', 89)">Add to Cart</button>
+      <button class="add-to-wishlist" onclick="addToWishlist('Kids\' Cartoon Sock')">♡ Wishlist</button>
+    </div>
+    <!-- Add more product cards with appropriate categories -->
+  </section>
+
+  <!-- Cart Section -->
+  <section id="cart" class="cart-section">
+    <h2>Your Cart</h2>
+    <ul id="cart-items"></ul>
+    <p id="total"></p>
+  </section>
+
+  <!-- Reviews Section -->
+  <section id="reviews" class="reviews-section">
+    <h2>Customer Reviews</h2>
+    <form onsubmit="addReview(event)" class="review-form">
+      <input type="text" id="reviewer" placeholder="Your name" required />
+      <textarea id="review-text" placeholder="Write a review..." required></textarea>
+      <button type="submit" class="btn">Submit Review</button>
+    </form>
+    <ul id="review-list" class="review-list"></ul>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 Sockista. All rights reserved.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
