@@ -2,13 +2,13 @@ version: 0.0
 os: linux
 files:
   - source: /
-    destination: /var/www/html/demo-app
+    destination: /var/www/html
 hooks:
   AfterInstall:
     - location: scripts/install_nginx.sh
-      runas: root
-    - location: scripts/configure_nginx.sh # <-- Add this line
+      timeout: 300
       runas: root
   ApplicationStart:
     - location: scripts/start_nginx.sh
+      timeout: 300
       runas: root

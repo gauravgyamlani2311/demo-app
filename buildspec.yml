@@ -3,15 +3,18 @@ version: 0.2
 phases:
   install:
     commands:
-      - echo Install phase started
+      - echo Installing NGINX
+      - sudo apt-get update
+      - sudo apt-get install nginx -y
       # No dependencies needed for static HTML/CSS/JS
   build:
     commands:
-      - echo Build phase started
+      - echo Build started on 'date'
+      - cp index.html /var/www/html/
       # No build step needed unless pre-processing assets (minification, etc.)
   post_build:
     commands:
-      - echo Post-build phase started
+      - echo Configuring NGINX
 
 artifacts:
   files:
