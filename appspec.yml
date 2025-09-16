@@ -1,16 +1,14 @@
 version: 0.0
 os: linux
-
 files:
   - source: /
     destination: /var/www/html/sockista
-
 hooks:
   AfterInstall:
     - location: scripts/install_nginx.sh
-      timeout: 300
+      runas: root
+    - location: scripts/configure_nginx.sh # <-- Add this line
       runas: root
   ApplicationStart:
     - location: scripts/start_nginx.sh
-      timeout: 300
       runas: root
